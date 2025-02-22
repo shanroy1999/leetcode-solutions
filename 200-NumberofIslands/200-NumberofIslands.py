@@ -46,8 +46,8 @@ class Solution:
         for r in range(rows):
             for c in range(cols):
                 if grid[r][c] == "1":
-                    dfs(r, c)
-                    # bfs(r, c)
+                    # dfs(r, c)
+                    bfs(r, c)
                     islands_count+=1
         
         return islands_count
