@@ -6,4 +6,7 @@ class Solution:
         word_count = Counter(words)
         sorted_words = sorted(word_count.keys(), key=lambda x: (-word_count[x], x))
 
+        # Time complexity = O(N log N) => N = number of words in list, sorting
+        # Space Complexity = O(N) => sorting the word frequencies and the sorted list
+
         return sorted_words[:k]
