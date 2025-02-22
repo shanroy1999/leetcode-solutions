@@ -18,7 +18,6 @@ class Solution:
         # Step 2 : Use a min heap to find the top k frequent words
         #        : Heap elements - tuples of (-frequency, word) -> simulate max heap
         # Step 3 : Return the first k words from heap
-        word_count = Counter(words)
         heap = []
         for word, count in word_count.items():
             heapq.heappush(heap, (-count, word))
