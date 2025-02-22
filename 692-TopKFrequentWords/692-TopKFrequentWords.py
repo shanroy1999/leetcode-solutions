@@ -25,4 +25,7 @@ class Solution:
         result = []
         for _ in range(k):
             result.append(heapq.heappop(heap)[1])
+
+        # Time complexity - O(N log k) -> building heap -> O(N), each heap operation -> O(log k)
+        # Space Complexity = O(N) => sorting word frequencies and the heap
         return result
