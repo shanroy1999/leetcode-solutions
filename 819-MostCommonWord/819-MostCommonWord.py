@@ -18,6 +18,9 @@ class Solution:
         for word in words:
             word_count[word] += 1
 
+        # Time complexity = O(N + M) -> N = length of para, M = number of banned words
+        # Space complexity = O(N + M)
+
         # Step 4 : Filter banned words
         banned_set = set(banned)
         for word in banned_set:
