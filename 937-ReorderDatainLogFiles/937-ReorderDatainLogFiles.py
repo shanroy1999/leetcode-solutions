@@ -7,11 +7,10 @@ class Solution:
             if content[0].isdigit():
                 digit_logs.append(log)
             else:
-                letter_logs.append((content, identifier, log))
+                letter_logs.append(log)
             
-        letter_logs.sort(key=lambda x: (x[0], x[1]))
-        result = [log for (_, _, log) in letter_logs] + digit_logs
-        return result
+        letter_logs.sort(key=lambda x: (x.split(" ", 1)[1], x.split(" ", 1)[0]))
+        return letter_logs + digit_logs
 
         # Time complexity => O(N log N) => N = number of logs, Sorting step also there
         # Space complexity => O(N) => list of logs
