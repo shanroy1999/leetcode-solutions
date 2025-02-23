@@ -22,3 +22,6 @@ class Solution:
             if profit > max_profit:
                 max_profit = profit
         return max_profit
+
+        # Time Complexity = O(N) => N = number of days
+        # Space Complexity = O(1)
