@@ -1,19 +1,20 @@
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        def isSameTree(p, q):
-            if not p and not q:
-                return True
-            if not p or not q:
-                return False
-            if p.val != q.val:
-                return False
-            return isSameTree(p.left, q.left) and isSameTree(p.right, q.right)
+        if subRoot == None :
+            return True
 
-        def helper(p, q):
-            if not p:
-                return False
-            if isSameTree(p, q):
-                return True
-            return helper(p.left, q) or helper(p.right, q)
+        if root == None :
+            return False
 
-        return helper(root, subRoot)
+        if self.same(root , subRoot):
+            return True
+        return self.isSubtree(root.left , subRoot) or self.isSubtree(root.right , subRoot)            
+
+    def same(self , r , s):
+        if r == None and s == None :
+            return True
+
+        if r and s and r.val == s.val:
+            return self.same(r.right , s.right) and self.same(r.left , s.left)  
+
+        return False
