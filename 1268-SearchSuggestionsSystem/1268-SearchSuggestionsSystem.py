@@ -9,3 +9,10 @@ class Solution:
             result.append(suggestions[:3])
         return result
 
+        # Time complexity = O(M X N) => M = length of searchword, N = length of products
+        # Space complexity = O(1)
+
+
+
+
+
