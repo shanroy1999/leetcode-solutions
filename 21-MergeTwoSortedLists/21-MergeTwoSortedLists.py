@@ -47,3 +47,6 @@ class Solution:
             current.next = list2
 
         return dummy.next
+
+        # Time Complexity => O(M+N) => M, N - lengths of two lists
+        # Space Complexity => O(1)
