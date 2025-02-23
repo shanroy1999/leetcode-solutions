@@ -11,6 +11,9 @@ class Solution:
         #     cells = new_cells
         # return cells
 
+        # Time Complexity = O(N X 8) => N = number of days, 8 = number of cells
+        # Space Complexity = O(1) => only store current state
+
         # Optimized Approach
         # Detect cycles in state transition => There are 2^8 = 256 states -> repeat itself after certain number of days
         # Simulate state transition -> store each state in a dictionary with day occured
@@ -44,3 +47,6 @@ class Solution:
                 cells = next_state(cells)
 
         return cells
+
+        # Time Complexity = O(256) => 256 possible states
+        # Space Complexity = O(256) => storing states in dictionary
