@@ -13,20 +13,20 @@ class Solution:
         # Space complexity = O(1)
 
         # Optimized Approach
-        products.sort()
-        result = []
-        start, end = 0, n-1
-        for i, c in enumerate(searchWord):
-            while start <= end and (i >= len(products[start]) or products[start][i] < c):
-                start+=1
-            while start <= end and (i >= len(products[start]) or products[start][i] > c):
-                end-=1
+        # products.sort()
+        # result = []
+        # start, end = 0, n-1
+        # for i, c in enumerate(searchWord):
+        #     while start <= end and (i >= len(products[start]) or products[start][i] < c):
+        #         start+=1
+        #     while start <= end and (i >= len(products[start]) or products[start][i] > c):
+        #         end-=1
             
-            if start <= end:
-                result.append(products[start:min(start+3, end+1)])
-            else:
-                end.append([])
-        return result
+        #     if start <= end:
+        #         result.append(products[start:min(start+3, end+1)])
+        #     else:
+        #         end.append([])
+        # return result
 
 
 
