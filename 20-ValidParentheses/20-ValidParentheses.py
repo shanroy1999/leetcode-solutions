@@ -6,6 +6,7 @@ class Solution:
             if char in hashmap.values():
                 stack.append(char)
             elif char in hashmap.keys():
+                # if stack is empty or hashmap[")" != "("]
                 if not stack or hashmap[char] != stack.pop():
                     return False
         return not stack
