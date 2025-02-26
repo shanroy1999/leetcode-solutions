@@ -1,0 +1,1 @@
+range(len(v[0])) # beats 79%
