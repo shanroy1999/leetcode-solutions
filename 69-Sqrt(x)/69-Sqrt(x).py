@@ -2,6 +2,7 @@ class Solution:
     def mySqrt(self, x: int) -> int:
         if x==0:
             return 0
+        # Binary Search Method
         res = 0
         low = 1
         high = x
