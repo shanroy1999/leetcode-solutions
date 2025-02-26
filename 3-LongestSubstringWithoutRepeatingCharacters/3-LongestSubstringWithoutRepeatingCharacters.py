@@ -1,0 +1,1 @@
+for right in range(len(s)):
