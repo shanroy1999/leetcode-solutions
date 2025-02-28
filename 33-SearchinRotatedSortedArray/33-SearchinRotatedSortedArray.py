@@ -4,8 +4,10 @@ class Solution:
         right = len(nums)-1
         while left <= right:
             middle = (left + right) // 2
+            # IF the middle element itself is the target => return middle
             if nums[middle] == target:
                 return middle
+            # Identify the sorted half
             # If Left half is sorted
             if nums[middle] >= nums[left]:
                 # Check if the target lies in the sorted left half
