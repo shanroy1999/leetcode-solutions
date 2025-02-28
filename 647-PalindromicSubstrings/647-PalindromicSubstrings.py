@@ -21,7 +21,7 @@ class Solution:
             left = i
             right = i+1
 
-            # count += self.countPalindrome(s, left, right)
+            # count += self.countPalindrome(s, left, right+1)
             # Check for inbound for even length palindrome
             while left >= 0 and right < len(s) and s[left] == s[right]:
                 count+=1
