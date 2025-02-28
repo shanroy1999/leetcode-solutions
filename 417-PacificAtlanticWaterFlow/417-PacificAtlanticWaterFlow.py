@@ -15,11 +15,11 @@ class Solution:
 
         for row in range(ROWS):
             dfs(row, 0, pacific, heights[row][0])                  # First row => connect to Pacific
-            dfs(row, COLS-1, atlantic, heights[row][COLS-1])       # Last column => connect to Atlantic
+            dfs(row, COLS-1, atlantic, heights[row][COLS-1])       # Last row => connect to Atlantic
 
         for col in range(COLS):
             dfs(0, col, pacific, heights[0][col])               # First column => connect to Pacific
-            dfs(ROWS-1, col, atlantic, heights[ROWS-1][col])    # Last row - connect to Atlantic
+            dfs(ROWS-1, col, atlantic, heights[ROWS-1][col])    # Last column - connect to Atlantic
 
         for row in range(ROWS):
             for col in range(COLS):
