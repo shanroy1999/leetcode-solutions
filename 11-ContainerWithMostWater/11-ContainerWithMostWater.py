@@ -8,7 +8,9 @@ class Solution:
         #         res = max(res, area)
         # return res
 
-        # Optimized approach
+        # Time complexity = O(N^2)
+
+        # Optimized approach - O(N) time complexity
         res = 0
         left = 0
         right = len(height)-1
