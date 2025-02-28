@@ -3,19 +3,23 @@ class Solution:
         left = 0
         right = len(nums)-1
         while left <= right:
-            middle = (left + right)//2
-            if target == nums[middle]:
+            middle = (left + right) // 2
+            if nums[middle] == target:
                 return middle
-            # Left sorted portion
-            if nums[left] <= nums[middle]:
-                if target > nums[middle] or target < nums[left]:
-                    left = middle+1
-                else:
+            # If Left half is sorted
+            if nums[middle] >= nums[left]:
+                # Check if the target lies in the sorted left half
+                if nums[middle] >= target and target >= nums[left]:
                     right = middle-1
-            # Right sorted portion
+                # If target doesnt lie in the sorted left half => check the right half
+                else:
+                    left = middle+1
+            # If right half is sorted
             else:
-                if target < nums[middle] or target > nums[right]:
-                    right = middle-1
+                # Check if the target lies in the sorted right half
+                if nums[middle] <= target and target <= nums[right]:
+                    left = middle + 1
+                # If target doesnt lie in the sorted right half => check the left half
                 else:
-                    left = middle+1
+                    right = middle - 1
         return -1
