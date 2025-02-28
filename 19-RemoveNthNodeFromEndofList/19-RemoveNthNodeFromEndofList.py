@@ -1,0 +1,1 @@
+dummy.next = dummy.next.next(= 5 in this case)
