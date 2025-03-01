@@ -12,3 +12,6 @@ class Solution:
         
         # If the goal reached the first index => return True => able to jump to the goal
         return goal == 0
+
+        # Time Complexity = O(N)
+        # Space Complexity = O(1)
