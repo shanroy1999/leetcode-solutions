@@ -15,3 +15,4 @@ class Solution:
                 prevEnd = min(end, prevEnd)
         return count
 
+        # Time complexity = O(NlogN)
