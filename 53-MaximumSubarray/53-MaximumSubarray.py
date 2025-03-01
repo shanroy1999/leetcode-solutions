@@ -19,3 +19,5 @@ class Solution:
             currSum += num
             maxSub = max(currSum, maxSub)
         return maxSub
+
+        # Time complexity = O(N)
