@@ -49,18 +49,22 @@ class Solution:
 
         # Approach 3 : Do the same as approach 2 but with in-place
         # first row and first col => becomes rowArr and colArr like in Approach 2
+        # first row and first col => tell which row / col in matrix to zero out
         rows, cols = len(matrix), len(matrix[0])
-        col0 = 1
+        # Extra variable to tell if first row is 0 or not
+        rowZero = 1
+        # Iterate through every row and col
+        # Determine which row/col need to be zero
         for row in range(rows):
             for col in range(cols):
                 if matrix[row][col]==0:
-                    # If we encounter a 0 in any row/col => mark the first row/col as 1 in-place
+                    # initialize the first col as 0 in-place
                     matrix[row][0] = 0
-                    # Cannot mark itself
+                    # Cannot mark for top left position
                     if col != 0:
                         matrix[0][col] = 0
                     else:
-                        col0 = 0
+                        rowZero = 0
         # Iterating every row and col other than 1st row and 1st col
         for row in range(1, rows):
             for col in range(1, cols):
@@ -72,7 +76,7 @@ class Solution:
         if matrix[0][0] == 0:
             for col in range(cols):
                 matrix[0][col] = 0
-        
-        if col0 == 0:
+        # If we have to zero out the first row
+        if rowZero == 0:
             for row in range(rows):
                 matrix[row][0] = 0
