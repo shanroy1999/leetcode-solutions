@@ -1,13 +1,7 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        # Traverse the grid
-        # When encounter a '1' => found a new island
-        # Use DFS or BFS => marks connected '1's (entire island) as visited
-        # Increment the islands count
-
         if not grid:
             return 0
-
         rows, cols = len(grid), len(grid[0])
         islands_count = 0
 
@@ -41,7 +35,6 @@ class Solution:
                 queue.append((row, col+1))    # Right
                 queue.append((row, col-1))    # Left
 
-
         # Traverse the grid
         for r in range(rows):
             for c in range(cols):
@@ -49,5 +42,4 @@ class Solution:
                     # dfs(r, c)
                     bfs(r, c)
                     islands_count+=1
-        
         return islands_count
