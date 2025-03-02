@@ -15,3 +15,5 @@ class Solution:
                 curr = curr.left
             else:
                 return curr
+
+        # Time complexity = O(log n) => visit 1 node for every single level of tree
