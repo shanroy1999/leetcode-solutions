@@ -2,6 +2,8 @@ class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         # 2 Dimensional Dynamic programming using dp grid
         # 2 D grid of dimension len(text2)+1 and len(text1)+1
+        # Last row and last col of the grid => all 0's since no substring match with empty string
+        # Boundary of grid => all 0's
         dp = [[0 for j in range(len(text2)+1)] for i in range(len(text1)+1)]
 
         # Starting at the bottom right of the matrix and working the way up
