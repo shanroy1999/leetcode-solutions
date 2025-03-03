@@ -31,3 +31,5 @@ class Solution:
         
         # decode the string
         return dfs(0)
+
+        # Time Complexity = O(N)
