@@ -35,3 +35,6 @@ class Solution:
                 res.append(level)
         # No nodes left in the queue => went through every single level
         return res
+
+        # Time complexity = O(N) => visiting each node only once
+        # Space complexity = O(N) => queue can have upto N/2 elements -> biggest level of BST
