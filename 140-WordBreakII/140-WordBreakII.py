@@ -9,6 +9,7 @@ class Solution:
                 # Add spaces to the words found and append to the result list
                 res.append(" ".join(curr))
             for j in range(i, len(s)):
+                # Go through the substrings of the input string
                 w = s[i:j+1]
                 # Iterate through the words in the wordDict set
                 if w in wordDict:
