@@ -15,6 +15,8 @@ class Solution:
         # Create e treeNode - 1st value of preorder always the root node
         root = TreeNode(preorder[0])
         # find the position of root node in inorder
+        # Root node will lie in the middle of the list in case of inorder
+        # Inorder : Left of root [:mid] => left subtree, right of root [mid+1:] => right subtree
         mid = inorder.index(preorder[0])
 
         # Build left subtree - all values to the left of root in inorder, 
