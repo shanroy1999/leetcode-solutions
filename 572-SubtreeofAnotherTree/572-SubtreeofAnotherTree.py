@@ -6,40 +6,24 @@
 #         self.right = right
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        # Traverse the root tree using DFS
-        # for each node in root => check if subtree rooted at that node is identical to subroot
-        # Compare tree structure and node values recursively for identical trees
-
-        # Empty tree always a subtree
-        if subRoot == None:
+        # if the subroot is null => empty tree is subtree of every tree => return true
+        if not subRoot:
             return True
-        # Empty tree cannot have a subtree
-        if root == None:
+        # if the parent itself is null => empty tree cannot have any subtree => return False
+        if not root:
             return False
-        # Current node is root tree matches the structure and value of subRoot tree
-        if self.same(root, subRoot):
+        # if the two trees are exactly the same => return True
+        if self.isSameTree(root, subRoot):
             return True
-
-        # Recursive call isSubtree on left and right subtrees of root
+        # see if left or right subtree of the parent tree matches the corresponding subRoot
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-    
-    def same(self, main, sub):
-        # if both main and sub trees are None => empty trees are same -> return True
-        if main==None and sub==None:
+        
+    # Check if the two complete trees are exactly the same
+    def isSameTree(self, s, t):
+        # If both trees are null => same -> return True
+        if not s and not t:
             return True
-        
-        # one tree is empty and other is non-empty => return False
-        if main==None or sub==None:
-            return False
-        
-        # If values of current nodes of main and sub tree are equal
-        if main and sub and main.val == sub.val:
-            # Recursively call same on left subtrees of main and sub
-            # Recursively call same on right subtrees of main and sub
-            # If both recursive calls -> return True => subtrees rooted at main and sub are same
-            return self.same(main.right, sub.right) and self.same(main.left, sub.left)
-        
+        # If the trees are not null and the values are the same => compare left and right nodes respectively
+        if s and t and s.val == t.val:
+            return self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
         return False
-
-    # Time Complexity => O(M x N) -> M = number of nodes in root, N = number of nodes in SubRoot
-    # Space Complexity => O(M) -> recursion
