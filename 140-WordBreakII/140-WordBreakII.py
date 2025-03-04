@@ -2,6 +2,7 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         # Brute force Backtracking
         wordDict = set(wordDict)
+        # Check each of the substring and see if we have the word matching in wordDict
         def backtrack(i):
             # done with the string
             if i==len(s):
