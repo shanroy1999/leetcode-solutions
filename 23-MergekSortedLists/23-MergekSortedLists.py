@@ -34,3 +34,5 @@ class Solution:
         if list2:
             curr.next = list2
         return dummy.next
+
+        # Time Complexity = O(Nlogk) => divide k by 2 every time and N nodes
