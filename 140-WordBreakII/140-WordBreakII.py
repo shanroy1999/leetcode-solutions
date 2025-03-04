@@ -22,3 +22,5 @@ class Solution:
         res = []
         backtrack(0)
         return res
+
+        # Time complexity = O(2^n)
